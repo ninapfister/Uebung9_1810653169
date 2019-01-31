@@ -2,27 +2,32 @@ package Aufgabe2;
 
 import javax.xml.bind.annotation.*;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD) // gibt an ob Felder oder Eigenschaften serialisiert werden
+@XmlRootElement // besonderes Element, muss in jeder xml Datei vorkommen, Wurzelelement
 public class Weather {
-    @XmlAttribute(name = "id")
+    @XmlAttribute(name = "id") // um Attribut/Eigenschaft hinzuzufügen
     private int id;
-    @XmlElement(name = "main")
+    @XmlElement(name = "main") // um Element hinzuzufügen
     private String main;
-    @XmlElement(name = "description")
+    @XmlElement(name = "description") // um Element hinzuzufügen
     private String description;
+
+
     //@XmlElement(name = "icon") Aufgabe 4
-    @XmlTransient
+    @XmlTransient // Auflösen von Namenskollisionen zwischen einem Eigenschaftsnamen und einem Feldnamen oder Verhindern der Zuordnung eines Felds / einer Eigenschaft
     private String icon;
 
-    public Weather(){}
-    public Weather(int id, String main, String description, String icon) {
+    public Weather() {}
+
+    public Weather(int id, String main, String description, String icon) // Konstruktor, greift auf private Attribute zu
+    {
         this.id = id;
         this.main = main;
         this.description = description;
         this.icon = icon;
     }
 
+    // getter und setter
     public int getId() {
         return id;
     }
@@ -55,12 +60,13 @@ public class Weather {
         this.icon = icon;
     }
 
-    @Override
-    public String toString() {
+    @Override // überschreiben
+    public String toString() // Methode toString
+    {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(); // macht StringBuilder ohne character, 16 characters möglich
 
-        sb.append("\n----- Weather Information-----\n");
+        sb.append("\n----- Weather Information-----\n");  // append, fügt String hinzu, "\n" fügt neue Zeile in Text an diesem Punkt
 
         sb.append("ID: " + id + "\n");
 
@@ -72,7 +78,7 @@ public class Weather {
 
         sb.append("*****************************");
 
-        return sb.toString();
+        return sb.toString(); // Rückgabe StringBuilder.toString Methode
 
     }
 }

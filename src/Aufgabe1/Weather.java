@@ -1,11 +1,14 @@
 package Aufgabe1;
 
-public class Weather {
-    private int id;
+public class Weather
+{
+    private int id; // Attribute
     private String main;
     private String description;
     private String icon;
 
+
+    // getter und setter
     public int getId() {
         return id;
     }
@@ -38,12 +41,13 @@ public class Weather {
         this.icon = icon;
     }
 
-    @Override
-    public String toString() {
+    @Override // überschreiben
+    public String toString() // toString Methode
+    {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(); // macht StringBuilder ohne character, 16 characters möglich
 
-        sb.append("\n----- Weather Information-----\n");
+        sb.append("\n----- Weather Information-----\n"); // append, fügt String hinzu
 
         sb.append("ID: " + getId() + "\n");
 
@@ -55,7 +59,7 @@ public class Weather {
 
         sb.append("*****************************");
 
-        return sb.toString();
+        return sb.toString(); // Rückgabe StringBuilder.toString Methode
 
     }
 }
