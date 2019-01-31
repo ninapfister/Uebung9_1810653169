@@ -7,19 +7,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Main {
-    public static void main(String[] args) throws JAXBException, FileNotFoundException {
-        File file = new File("src/at/ac/fh_kufstein/a2/weather.xml");
-        JAXBContext jaxbContext = JAXBContext.newInstance(Aufgabe2.Weather.class);
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        Aufgabe2.Weather w = (Aufgabe2.Weather) unmarshaller.unmarshal(file);
-        System.out.println(w);
+    public static void main(String[] args) throws JAXBException, FileNotFoundException // FileNotFoundException - signalisiert, dass ein Versuch, die durch einen angegebenen Pfadnamen angegebene Datei zu öffnen, fehlgeschlagen ist
+    {
+        File file = new File("src/Aufgabe2/weather.xml"); // neues File, Pfadname
+        JAXBContext jaxbContext = JAXBContext.newInstance(Aufgabe2.Weather.class); // ermöglicht einfaches Mapping eines Javaobjekts in eine xml Datei und umgekehrt, neue Instanz, auf Weather.class zugreifen
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller(); //  Steuert den Prozess der Deserialisierung von XML-Daten in neu erstellten Java-Inhalt und überprüft ihn, neuer Unmarshaller, zurück in ein Objekt
+        Aufgabe2.Weather w = (Aufgabe2.Weather) unmarshaller.unmarshal(file); // greift auf Aufgabe2 weather zu, File wird unmarshalled
+        System.out.println(w); // Ausgabe
 
-        Aufgabe5.Weather w2 = new Aufgabe5.Weather();
-        w2.setId(w.getId());
-        w2.setMain(w.getMain());
-        w2.setDescription(w.getDescription());
-        w2.setIcon(w.getIcon());
-        JSONWriterObjectMapper jom = new JSONWriterObjectMapper();
-        jom.writeWeatherToJson(w2);
+        Aufgabe5.Weather w2 = new Aufgabe5.Weather(); // neue Instanz, greift auf Aufgabe5.Weather zu
+        w2.setId(w.getId()); // Id setzten, get
+        w2.setMain(w.getMain()); // main setzten, get
+        w2.setDescription(w.getDescription()); //description sezten, get
+        w2.setIcon(w.getIcon()); // Icon setzten, get
+        JSONWriterObjectMapper jom = new JSONWriterObjectMapper(); // neuer json Mapper
+        jom.writeWeatherToJson(w2); // auf Mapper zugreifen
     }
 }

@@ -9,7 +9,7 @@ public class Weather {
     private String description;
     private String icon;
 
-    @JsonProperty("Identifikation")
+    @JsonProperty("Identifikation") // rename Variable, Eigenschaft
     public int getId() {
         return id;
     }
@@ -18,7 +18,7 @@ public class Weather {
         this.id = id;
     }
 
-    @JsonIgnore
+    @JsonIgnore // wird nicht ausgesendet, ohne Passwort einloggen nicht möglich, geblocked für serialisieren
     public String getMain() {
         return main;
     }
@@ -27,7 +27,7 @@ public class Weather {
         this.main = main;
     }
 
-    @JsonProperty("Beschreibung")
+    @JsonProperty("Beschreibung") // Eigenschaft
     public String getDescription() {
         return description;
     }
@@ -36,7 +36,7 @@ public class Weather {
         this.description = description;
     }
 
-    @JsonProperty("Bild")
+    @JsonProperty("Bild") // Eigenschaft
     public String getIcon() {
         return icon;
     }
@@ -45,12 +45,12 @@ public class Weather {
         this.icon = icon;
     }
 
-    @Override
+    @Override // überschreiben
     public String toString() {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(); // macht StringBuilder ohne character, 16 characters möglich
 
-        sb.append("\n----- Weather Information-----\n");
+        sb.append("\n----- Weather Information-----\n"); // append fügt String hinzu, kennzeichnet einen Zeilenumbruch
 
         sb.append("ID: " + getId() + "\n");
 
@@ -62,7 +62,7 @@ public class Weather {
 
         sb.append("*****************************");
 
-        return sb.toString();
+        return sb.toString(); // Rückgabe StringBuilder.toString Methode
 
     }
 }

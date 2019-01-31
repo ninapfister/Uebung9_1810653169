@@ -7,13 +7,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
-public class JSONWriterObjectMapper {
-    ObjectMapper objectMapper = new ObjectMapper();
+public class JSONWriterObjectMapper
+{
+    ObjectMapper objectMapper = new ObjectMapper(); // stellt Methoden für json (Dateispeicherart) Lesung und Schreibung zur Verfügung, beinhaltet read Methode, Klasse von jackson API
 
-    public void writeWeatherToJson(Weather w){
+    public void writeWeatherToJson(Weather w)
+    {
         try{
-            String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(w);
-            System.out.println("JSON String: " + jsonString);
+            String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(w); // String erstellen, der ObjectMapper
+            System.out.println("JSON String: " + jsonString); // Ausgabe
         } catch(JsonGenerationException e){
             e.printStackTrace();
         } catch (JsonMappingException e){

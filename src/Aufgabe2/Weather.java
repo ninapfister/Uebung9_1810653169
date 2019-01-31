@@ -2,7 +2,7 @@ package Aufgabe2;
 
 import javax.xml.bind.annotation.*;
 
-@XmlAccessorType(XmlAccessType.FIELD) // gibt an ob Felder oder Eigenschaften serialisiert werden
+@XmlAccessorType(XmlAccessType.FIELD) // gibt an ob Felder oder Eigenschaften serialisiert werden, Umwandlung des Zustands eines Objekts
 @XmlRootElement // besonderes Element, muss in jeder xml Datei vorkommen, Wurzelelement
 public class Weather {
     @XmlAttribute(name = "id") // um Attribut/Eigenschaft hinzuzufügen
