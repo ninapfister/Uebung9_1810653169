@@ -14,10 +14,10 @@ public class Weather {
 
 
     //@XmlElement(name = "icon") Aufgabe 4
-    @XmlTransient // Auflösen von Namenskollisionen zwischen einem Eigenschaftsnamen und einem Feldnamen oder Verhindern der Zuordnung eines Felds / einer Eigenschaft
+   @XmlTransient // Auflösen von Namenskollisionen zwischen einem Eigenschaftsnamen und einem Feldnamen oder Verhindern der Zuordnung eines Felds / einer Eigenschaft
     private String icon;
 
-    public Weather() {}
+    public Weather() {} // jackson API greift auf leeren Konstruktor zu
 
     public Weather(int id, String main, String description, String icon) // Konstruktor, greift auf private Attribute zu
     {
