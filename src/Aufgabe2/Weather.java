@@ -13,7 +13,7 @@ public class Weather {
     private String description;
 
 
-    //@XmlElement(name = "icon") Aufgabe 4
+    //@XmlElement(name = "icon") //Aufgabe 4
    @XmlTransient // Auflösen von Namenskollisionen zwischen einem Eigenschaftsnamen und einem Feldnamen oder Verhindern der Zuordnung eines Felds / einer Eigenschaft
     private String icon;
 

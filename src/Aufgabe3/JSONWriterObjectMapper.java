@@ -14,8 +14,8 @@ public class JSONWriterObjectMapper
     public void writeWeatherToJson(Weather w)
     {
         try{
-            String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(w); // String erstellen, der ObjectMapper
-            System.out.println("JSON String: " + jsonString); // Ausgabe
+            String jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(w); // String erstellen, der ObjectMapper formatiert und gibt als String aus
+            System.out.println(jsonString); // Ausgabe
         } catch(JsonGenerationException e){
             e.printStackTrace();
         } catch (JsonMappingException e){
